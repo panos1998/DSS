@@ -1,1 +1,12 @@
-<p>chat-component works!</p>
+<div class = "row align-items-center justifiy-content-center" style="flex-direction:row; padding: 2%; overflow-y:scroll;">
+    <div class = "col-sm align-items-center" style="background-color: #bfdbfe;  height: 75vh; padding: 2%; border-radius: 2%;">
+        <p-card header = "DSS Chat" [style] ="{'height': '100%'}">
+            <ng-template pTemplate="content">
+                <app-message-thread-container></app-message-thread-container>
+            </ng-template>
+            <ng-template pTemplate="footer">
+                <app-prompt-component></app-prompt-component>
+            </ng-template>
+        </p-card>
+    </div>
+</div>
