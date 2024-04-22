@@ -1,12 +1,11 @@
-<div class = "row align-items-center justifiy-content-center" style="flex-direction:row; padding: 2%; overflow-y:scroll;">
-    <div class = "col-sm align-items-center" style="background-color: #bfdbfe;  height: 75vh; padding: 2%; border-radius: 2%;">
-        <p-card header = "DSS Chat" [style] ="{'height': '100%'}">
-            <ng-template pTemplate="content">
-                <app-message-thread-container></app-message-thread-container>
-            </ng-template>
-            <ng-template pTemplate="footer">
-                <app-prompt-component></app-prompt-component>
-            </ng-template>
-        </p-card>
+<div class="row align-items-center justify-content-space-between"
+    style="height: 80vh;background-color:#bae6fd;flex-direction:column;
+    border-radius: 5%;
+    padding: 5%;">
+    <div class="col-sm" style="border:2px solid red; height:70%">
+        <app-message-thread-container></app-message-thread-container>
+    </div>
+    <div class="row " style="flex-direction: column; border:2px solid yellow; height: 30%;">
+        <app-prompt-component></app-prompt-component>
     </div>
 </div>
