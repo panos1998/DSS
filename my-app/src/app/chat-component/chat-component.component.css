@@ -1,0 +1,7 @@
+:host ::ng-deep .p-button .p-button-label {
+    font-weight: 700;
+    font-size:medium;
+}
+:host ::ng-deep .p-button {
+    transform: scale(0.7);
+}
