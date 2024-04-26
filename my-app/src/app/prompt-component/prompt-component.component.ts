@@ -8,19 +8,18 @@ import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-prompt-component',
   standalone: true,
-  imports: [SelectButtonModule, FormsModule, ButtonModule, ReactiveFormsModule],
+  imports: [SelectButtonModule, ButtonModule],
   templateUrl: './prompt-component.component.html',
   styleUrl: './prompt-component.component.css'
 })
 export class PromptComponentComponent {
   currentOptions: SelectItem[];
   value: any;
-  formGroup!: FormGroup;
     constructor () {
     this.currentOptions = [];
-    this.formGroup = new FormGroup({
-      value: new FormControl("")
-    })
+    // this.formGroup = new FormGroup({
+    //   value: new FormControl("")
+    // })
     this.value = null;
     this.currentOptions.push({label:'New York', value:'New Yorke'});
         this.currentOptions.push({label:'Rome', value:'Rome'});
