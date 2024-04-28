@@ -3,12 +3,13 @@ import { SelectItem } from 'primeng/api';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule,  ReactiveFormsModule, FormGroup, FormBuilder, FormControl } from '@angular/forms'
 import { ButtonModule } from 'primeng/button';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-prompt-component',
   standalone: true,
-  imports: [SelectButtonModule, ButtonModule],
+  imports: [SelectButtonModule, ButtonModule, CommonModule],
   templateUrl: './prompt-component.component.html',
   styleUrl: './prompt-component.component.css'
 })

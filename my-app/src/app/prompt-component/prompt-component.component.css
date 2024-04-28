@@ -8,3 +8,16 @@
 :host ::ng-deep .p-button {
     transform: scale(0.7);
 }
+
+.focusEffect {
+    /* From https://css.glass */
+background: rgba(220, 252, 231, 0.67)!important;
+border-radius: 999px!important;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)!important;
+backdrop-filter: blur(10.9px)!important;
+-webkit-backdrop-filter: blur(10.9px)!important;
+border: 1px solid rgba(220, 252, 231, 0.3)!important;
+}
+.focusEffect:hover{
+    box-shadow:2px 2px 2px 2px #f4f4f5!important;
+}

@@ -1,7 +1,32 @@
 :host ::ng-deep .p-button .p-button-label {
     font-weight: 700;
-    font-size:medium;
+    font-size: medium;
 }
+
 :host ::ng-deep .p-button {
     transform: scale(0.7);
+}
+
+.thread-container-container {
+    border: 2px solid red;
+    height: 60%;
+    overflow-y: scroll;
+    background-color: #22c55e;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.thread-container-container::-webkit-scrollbar {
+    display: none;
+}
+
+.userHeaderContainer{
+    top:0;
+    position:sticky;
+    width:0;
+    min-width: 100%;
+    z-index:100;
+    background-color: black;
 }
