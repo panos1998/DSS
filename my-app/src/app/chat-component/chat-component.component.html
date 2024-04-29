@@ -1,13 +1,28 @@
 <div class="container-fluid" style="width:100%;">
-    <div class="row" style="flex-direction: column; height: 80vh;margin: auto;">
-        <div class="d-flex userHeaderContainer"> My header</div>
+    <div class="row" style="flex-direction: column; height: 80vh;min-width: 100%; width:max-content;">
+        <div class="col userHeaderContainer shadow">
+            <div class="d-flex" style="justify-content: center; align-items: center; padding-top: 3%;">
+                <div class="d-flex" style="width: 0; min-width: 50%;">
+                    <h6 style="color: white;">Decision Support System</h6>
+                </div>
+                <div class="d-flex align-items-center " style="justify-content: space-around; width: 0; min-width: 50%;">
+                    <i class="fa-solid fa-hospital" style="color: white;"></i>
+                    <i class="pi pi-circle-on" style="color: green"></i>
+                </div>
+                    
+               
+
+            </div>
+        </div>
         <!-- <div class="col align-items-center justify-content-space-between" style="height: 80vh;background-color:#bae6fd;flex-direction:column;
         border-radius: 0%; width: fit-content;"> -->
         <div class="col-12 thread-container-container">
             <app-message-thread-container></app-message-thread-container>
         </div>
         <!-- <div class="row" style="flex-direction: row; border:2px solid yellow; height: 25%;"> -->
-        <div class="col-12 d-flex align-items-center justify-content-center" style="background-color: #ecfdf5; border: 3px solid green; height: 30%;">
+        <div class="col-12 d-flex align-items-center justify-content-center"
+            style="background: linear-gradient(to bottom, rgba(180,221,180,1) 0%,rgba(131,199,131,1) 26%,rgba(82,177,82,1) 100%,rgba(0,36,0,1) 100%,rgba(0,138,0,1) 100%,rgba(0,36,0,1) 100%,rgba(0,87,0,1) 100%,rgba(0,36,0,1) 100%,rgba(0,36,0,1) 100%,rgba(0,36,0,1) 100%,rgba(0,36,0,1) 100%);border: 0px solid green; height: 30%;
+            border-radius: 0px 0px 10px 10px;">
             <app-prompt-component></app-prompt-component>
         </div>
 
