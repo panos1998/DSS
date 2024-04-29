@@ -11,7 +11,7 @@
     border: 0px solid red;
     height: 60%;
     overflow-y: scroll;
-    background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);
+    background: inherit;
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
@@ -30,4 +30,7 @@
     z-index: 100;
     background: linear-gradient(to bottom, #7d7e7d 0%,#0e0e0e 100%); 
     border-radius: 25px 25px 0px 0px;
+}
+.flex-fill {
+    flex:1;
 }
