@@ -1,34 +1,26 @@
-<div class="container-fluid" style="width:100%;
+<div class="container-fluid"
+    style="width:100%;
 border-radius: 50px 50px 10px 10px; background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);">
-    <div class="row" style="justify-content:start;border: 0px solid red; flex-direction: column; height: 80vh;min-width: 100%; width:max-content;">
-        <div class="col-12 userHeaderContainer shadow" style="flex-grow: 1;">
+    <div class="row"
+        style="justify-content:start;border: 0px solid red; flex-direction: column; height: 80vh;min-width: 100%; width:max-content;">
+        <div class="col-12 userHeaderContainer shadow" style="flex-grow: 0;">
             <div class="d-flex" style="justify-content: center; align-items: center; padding-top: 3%;">
                 <div class="d-flex" style="width: 0; min-width: 70%;">
                     <h6 style="color: white;">Decision Support System</h6>
                 </div>
-                <div class="d-flex align-items-center " style="justify-content: space-around; width: 0; min-width: 25%;">
+                <div class="d-flex align-items-center "
+                    style="justify-content: space-around; width: 0; min-width: 25%;">
                     <i class="fa-solid fa-hospital" style="color: white;"></i>
                     <i class="pi pi-circle-on" style="color: green"></i>
                 </div>
-                    
-               
-
             </div>
         </div>
-        <!-- <div class="col align-items-center justify-content-space-between" style="height: 80vh;background-color:#bae6fd;flex-direction:column;
-        border-radius: 0%; width: fit-content;"> -->
         <div class="col-12 thread-container-container" style="flex-grow: 20;">
-            <app-message-thread-container></app-message-thread-container>
+            <app-message-thread-container [messages] = "messages"></app-message-thread-container>
         </div>
-        <!-- <div class="row" style="flex-direction: row; border:2px solid yellow; height: 25%;"> -->
         <div class="col-12 d-flex align-items-end justify-content-center"
             style="background-color: inherit;flex-grow: 5;">
-            <app-prompt-component></app-prompt-component>
+            <app-prompt-component (clickedOpenCamera)="receiveEvent($event)"></app-prompt-component>
         </div>
-
-
-        <!-- <app-prompt-component></app-prompt-component> -->
-        <!-- </div> -->
-        <!-- </div> -->
     </div>
 </div>

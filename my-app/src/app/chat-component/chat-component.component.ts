@@ -1,28 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { PromptComponentComponent } from '../prompt-component/prompt-component.component'
 import { MessageThreadContainerComponent } from '../message-thread-container/message-thread-container.component'
 import { SelectButtonModule } from 'primeng/selectbutton';
-import { SelectItem } from 'primeng/api';
+import { Message } from '../Interfaces/Message';
 import { ButtonModule } from 'primeng/button';
-
+import {WebcamModule} from 'ngx-webcam';
 
 @Component({
   selector: 'app-chat-component',
   standalone: true,
-  imports: [CardModule, PromptComponentComponent,MessageThreadContainerComponent, SelectButtonModule, ButtonModule],
+  imports: [CardModule, PromptComponentComponent, MessageThreadContainerComponent, SelectButtonModule,
+  ButtonModule, WebcamModule],
   templateUrl: './chat-component.component.html',
   styleUrl: './chat-component.component.css'
 })
-export class ChatComponentComponent {
-  currentOptions: SelectItem[];
-  constructor(){
-    this.currentOptions = [];
-    this.currentOptions.push({label:'New York', value:'New Yorke'});
-    this.currentOptions.push({label:'Rome', value:'Rome'});
-    this.currentOptions.push({label:'London', value:'London'});
-    this.currentOptions.push({label:'Istanbul', value:'Istanbul'});
+export class ChatComponentComponent implements OnInit {
+  messages: Message[] = [];
+  ngOnInit(): void {
+    this.messages = [
+      {
+        author: "dss",
+        text: "Hello, I am your DSS. Let's tackle the skin cancer detection!"
+      },
+      {
+        author: "user",
+        text: "Nice to meet you, DSS."
+      }
+    ];
+
   }
- 
+  receiveEvent(event: any) {
+    console.log("Received the click event :)", event);
+  }
+
 
 }

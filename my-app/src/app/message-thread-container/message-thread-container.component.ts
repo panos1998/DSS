@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MessageComponentComponent } from '../message-component/message-component.component';
 import { CommonModule } from '@angular/common';
+
+interface Message {
+  author: string;
+  text: string;
+}
 
 @Component({
   selector: 'app-message-thread-container',
   standalone: true,
   imports: [MessageComponentComponent, CommonModule],
   templateUrl: './message-thread-container.component.html',
-  styleUrl: './message-thread-container.component.css'
+  styleUrls: ['./message-thread-container.component.css']
 })
-export class MessageThreadContainerComponent {
-
+export class MessageThreadContainerComponent implements OnInit {
+ @Input() messages: Message[] = [];
+  ngOnInit(): void {
+    
+  }
 }

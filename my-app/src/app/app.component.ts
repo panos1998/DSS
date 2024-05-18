@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ChatComponentComponent } from './chat-component/chat-component.component'
@@ -9,6 +9,9 @@ import { ChatComponentComponent } from './chat-component/chat-component.componen
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'my chatbot app';
+export class AppComponent implements OnInit {
+  title: any = '';
+  ngOnInit(): void {
+    this.title = 'my chatbot app'; 
+  }
 }
