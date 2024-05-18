@@ -4,13 +4,15 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, FormControl } from '@angular/forms'
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
+import { PromptComponentServiceService } from '../../../services/prompt-component-service.service';
+import { HttpClientModule } from '@angular/common/http';
 // import * as tf from '@tensorflow/tfjs';
 
 
 @Component({
   selector: 'app-prompt-component',
   standalone: true,
-  imports: [SelectButtonModule, ButtonModule, CommonModule],
+  imports: [SelectButtonModule, ButtonModule, CommonModule, HttpClientModule],
   templateUrl: './prompt-component.component.html',
   styleUrl: './prompt-component.component.css'
 })
@@ -18,6 +20,8 @@ export class PromptComponentComponent implements OnInit {
   @Output() clickedOpenCamera: EventEmitter<any> = new EventEmitter();
   // @ViewChild('fileInput') fileInput: ElementRef;
   // model: tf.LayersModel;
+  constructor (
+    private promptService: PromptComponentServiceService){}
   value: any;
   currentOptions: SelectItem[] = [];
   ngOnInit(): void {
@@ -30,6 +34,8 @@ export class PromptComponentComponent implements OnInit {
   }
   onOpenCamera() {
     // console.log("camera event emmited");
+    const response: any = this.promptService.getMessage();
+    console.log(response);
     this.clickedOpenCamera.emit("Sent payload");
     // this.fileInput.nativeElement.click();
   }
