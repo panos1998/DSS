@@ -18,6 +18,9 @@ export class PromptComponentServiceService {
 //     console.log(error)
 //   }
 // )
-    // return this.http.get<response>("/api/malakia");
+    return this.http.get<response>("/api/DOKIMIFRONT");
+  }
+  uploadImage(formData: FormData): Observable<any> {
+    return this.http.post('/api/upload-image', formData,{responseType:'json'});
   }
 }

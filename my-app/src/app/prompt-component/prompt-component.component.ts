@@ -18,65 +18,93 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrl: './prompt-component.component.css'
 })
 export class PromptComponentComponent implements OnInit {
+  
   @Output() clickedOpenCamera: EventEmitter<any> = new EventEmitter();
-  // @ViewChild('fileInput') fileInput: ElementRef;
-  // model: tf.LayersModel;
+  
+  @ViewChild('fileInput') fileInput: ElementRef;
+  uploadedImageUrl: string;
+  
   constructor (
     private promptService: PromptComponentServiceService){}
+  
+   addedImage: boolean;
   value: any;
   currentOptions: SelectItem[] = [];
+  
   ngOnInit(): void {
-   this.loadModel()
+   this.uploadedImageUrl = '';
+   this.addedImage = false;
   }
-  async loadModel() {
-    try{
-    //  this.model = await tf.loadLayersModel('https://github.com/panos1998/dss/blob/chat2/my-app/src/assets/nn_models/model.json');
-    }catch(error){console.log(error);}
+  async uploadImage() {
+    try {
+      if (this.addedImage) {
+        console.log("I upload an image");
+  
+        // Create a FormData instance
+        const formData = new FormData();
+  
+        // Append the file to the FormData instance
+        const fileInput = this.fileInput.nativeElement;
+        if (fileInput.files && fileInput.files.length > 0) {
+          formData.append('file', fileInput.files[0]);
+        }
+  
+        // Send the FormData instance in a POST request
+        this.promptService.uploadImage(formData).subscribe(json=> {
+          console.log(json);
+          // const urlCreator = window.URL || window.webkitURL;
+          // const imageUrl = urlCreator.createObjectURL(blob);
+          // this.uploadedImageUrl = imageUrl;
+          const payload: any = {
+            type:"responseSent",
+            data: json
+          };
+          console.log(payload);
+          this.clickedOpenCamera.emit(payload);
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }
   onOpenCamera() {
-    // console.log("camera event emmited");
-    // const response: any = this.promptService.getMessage();
     // console.log(response);
-    this.clickedOpenCamera.emit("Sent payload");
-    // this.fileInput.nativeElement.click();
+    
+    this.fileInput.nativeElement.click();
   }
-  // handle(event: any) {
-  //   const input = event.target as HTMLInputElement;
-  //   if (input.files && input.files.length > 0) {
-  //     const file = input.files[0];
-  //     if (this.isValidImage(file)) {
-  //       this.readFile(file);
-  //     } else {
-  //       console.error('Selected file is not an image.');
-  //     }
-  //   }
-  // }
-  // isValidImage(file: File): boolean {
-  //   console.log(file.type);
-  //   return file.type.startsWith('image/');
-  // }
+  handle(event: any) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      if (this.isValidImage(file)) {
+        this.readFile(file);
+        const payload: any = {
+          type:"ImageSent",
+          data: ""
+        };
+        this.clickedOpenCamera.emit(payload);
+      } else {
+        console.error('Selected file is not an image.');
+      }
+    }
+  }
+  isValidImage(file: File): boolean {
+    console.log(file.type);
+    return file.type.startsWith('image/');
+  }
 
-  // readFile(file: File) {
-  //   const reader = new FileReader();
-  //   reader.onload = async (e: any) => {
-  //     const imageSrc = e.target.result;
-  //     const img = new Image();
-  //     img.src = imageSrc;
-  //     img.onload = async () => {
-  //       const tensor = this.processImage(img);
-  //       // const prediction = await this.model.predict(tensor) as tf.Tensor;
-  //       // prediction.print(); // Handle the prediction result
-  //     };
-  //   };
-  //   reader.readAsDataURL(file);
-  // }
-  // processImage(image: HTMLImageElement) {
-  //   // const tensor = tf.browser.fromPixels(image)
-  //   //   .resizeNearestNeighbor([28, 28]) // Resize to 28x28 pixels
-  //   //   .toFloat()
-  //   //   .div(tf.scalar(255.0)) // Normalize the pixel values
-  //   //   .flatten() // Flatten to 1D vector [28 * 28 * 3]
-  //   //   .expandDims(0); // Add a batch dimension [1, 28 * 28 * 3]
-  //   // return tensor;
-  // }
+  readFile(file: File) {
+    const reader = new FileReader();
+    reader.onload = async (e: any) => {
+      const imageSrc = e.target.result;
+      const img = new Image();
+      img.src = imageSrc;
+      img.onload = async () => {
+        this.addedImage = true;
+      };
+      
+    };
+   
+    reader.readAsDataURL(file);
+  }
 }

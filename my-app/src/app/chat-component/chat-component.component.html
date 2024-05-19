@@ -21,6 +21,11 @@ border-radius: 50px 50px 10px 10px; background: linear-gradient(to bottom, #b4dd
         <div class="col-12 d-flex align-items-end justify-content-center"
             style="background-color: inherit;flex-grow: 5;">
             <app-prompt-component (clickedOpenCamera)="receiveEvent($event)"></app-prompt-component>
+            <!-- <div [hidden] = "uploadedImageUrl.length <1">
+                <img  [src]="uploadedImageUrl" alt="Uploaded Image" style="max-height: 100px; max-width: 100px;">
+            </div> -->
+            
+
         </div>
     </div>
 </div>

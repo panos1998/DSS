@@ -4,7 +4,7 @@
         style="margin: 2%;border-radius:999px; border:0px solid blue;align-self: flex-end; background-color: white;  padding: 1%;">
         <div class="d-flex justify-content-center align-items-center">
             <p-button icon="pi pi-plus" [style]="{'min-width':'300px'}" [raised]="true" (onClick) = "onOpenCamera()">
-                <!-- <input #fileInput type="file" style="display:none" (change)="handle($event)"> -->
+                <input #fileInput type="file" style="display:none" (change)="handle($event)">
             </p-button>
         </div>
         
@@ -12,6 +12,7 @@
             optionLabel="label" optionValue="value"></p-selectButton> -->
     </div>    
     <div class="col-2" style="padding:3%; align-items:center;">
-        <p-button icon="pi pi-send" [rounded]="true"> </p-button>
+        <p-button icon="pi pi-send" [rounded]="true" [disabled]="!addedImage" (onClick)="uploadImage()"> </p-button>
     </div>
+    <!-- <img *ngIf="uploadedImageUrl" [src]="uploadedImageUrl" alt="Uploaded Image"> -->
 </div>
