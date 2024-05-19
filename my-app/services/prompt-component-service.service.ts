@@ -1,16 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClientModule } from '@angular/common/http';
+import { response } from '../src/app/Interfaces/response';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PromptComponentServiceService {
 
-  constructor(
-    
-  ) { }
+  constructor(private http: HttpClient) { }
   getMessage(){
-    return 'Hello from my service';
+// http.get('http://localhost:8000/items').subscribe(
+//   (response) => {
+//     console.log(response)
+//   },
+//   (error) => {
+//     console.log(error)
+//   }
+// )
+    // return this.http.get<response>("/api/malakia");
   }
 }
