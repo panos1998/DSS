@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "@tensorflow/tfjs": "^4.19.0"
+  },
+  "scripts": {
+    "build": "ng build --prod"
   }
 }

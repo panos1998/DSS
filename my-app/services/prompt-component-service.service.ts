@@ -9,6 +9,7 @@ import { response } from '../src/app/Interfaces/response';
 export class PromptComponentServiceService {
 
   constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
   getMessage(){
 // http.get('http://localhost:8000/items').subscribe(
 //   (response) => {
