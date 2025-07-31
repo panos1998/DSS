@@ -80,8 +80,10 @@ app-root {
   overflow: hidden;
 }
 .p-card{
-  height:95vh;
+  background-color: #0d6efd;
+  height:100%;
   .p-card-body{
+    background-color: whitesmoke;
     height:100% !important;
   }
 }
