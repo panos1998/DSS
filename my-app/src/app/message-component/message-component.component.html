@@ -1,21 +1,11 @@
-<!-- <div class="col align-self-center" style="width: fit-content; background-color: #bbf7d0;margin-bottom: 3%; margin-right:auto ;margin-left:auto; border-radius: 5%;"> -->
-<!-- <div class = "col d-flex justify-content-center align-items-center" > -->
-    <div class="d-flex align-items-center shadow-lg" [ngStyle]="style">
-        <div class="col-10" style="padding: 1.3%;">
-          <p style="font-size: small;">{{ text }}</p>
-        </div>
-        <div class="col-2">
-          <i [class]="icon"></i>
-        </div>
-      </div>
-<!-- <div class="d-flex align-items-center shadow-lg " [ngStyle]="style">
-    <div class="col-10 " style="padding: 1.3%;">
-        <p style="font-size: small; ">
-            Lorem Ipsum is simply dummy tmply dummy text
-            L
-        </p>
+<div class="w-100 d-flex" [class]="{'justify-content-end': subject==='dss', 'justify-content-start': subject!=='dss'}">
+  <div class="message-container mx-2" [ngStyle]="style">
+    <div class="message-content">
+        <p class="message-text">{{ text }}</p>
     </div>
-    <div class="col-2">
-        <i class="fa-solid fa-user-doctor"></i>
+    <div class="message-icon">
+        <i [class]="icon"></i>
     </div>
-</div> -->
+</div>
+</div>
+

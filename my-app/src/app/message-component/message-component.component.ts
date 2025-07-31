@@ -28,25 +28,24 @@ export class MessageComponentComponent implements OnInit {
   setStyle(subject: string) {
     if (subject === "dss") {
       return {
-        'min-width': '85%',
-        'width': '0',
-        'border-radius': '25px 5px 25px 5px',
+        'width': '85%',
+        'border-radius': '8px 15px 8px 15px',
         'background': 'rgba(220, 252, 231, 0.39)',
         'margin-bottom': '3px',
-        'margin-top': '1px',
-        'margin-left': '18%',
+
         'backdrop-filter': 'blur(20px)',
-        '-webkit-backdrop-filter': 'blur(20px)'
+        '-webkit-backdrop-filter': 'blur(20px)',
+        'padding': '0.25rem',
       };
     } else {
       return {
-        'min-width': '85%',
-        'width': '0',
-        'border-radius': '25px 5px 25px 5px',
+        'width': '85%',
+        'border-radius': '15px 8px 15px 8px',
         'background-color': 'var(--green-100)',
         'margin-bottom': '3px',
         'margin-top': '1px',
-        'margin-right': '18%'
+        'padding':'0.25rem'
+
       };
     }
   }

@@ -31,7 +31,7 @@ export class ChatComponentComponent implements OnInit {
     this.messages = [
       {
         author: "dss",
-        text: "Hello   👋   👋   👋   👋, I am your DSS. Let's tackle the skin cancer detection!"
+        text: "Hello   👋   👋   👋   👋, I am your DSS. Let's tackle the pancreatic cancer detection!"
       },
       // {
       //   author: "user",

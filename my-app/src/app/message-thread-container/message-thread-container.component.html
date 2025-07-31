@@ -1,8 +1,9 @@
 <div class="d-flex" style="flex-direction: column;">
+  @for(message of messages; track message) {
     <app-message-component
-      *ngFor="let msg of messages"
-      [subject]="msg.author"
-      [text]="msg.text">
+      [subject]="message.author"
+      [text]="message.text">
     </app-message-component>
+    }
   </div>
    

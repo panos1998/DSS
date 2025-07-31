@@ -10,6 +10,9 @@
 :host ::ng-deep .p-button {
     transform: scale(0.7);
 }
+:host{
+    width:100%;
+}
 
 .focusEffect {
     /* From https://css.glass */

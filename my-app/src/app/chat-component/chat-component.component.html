@@ -1,31 +1,31 @@
-<div class="container-fluid"
-    style="width:100%;
-border-radius: 50px 50px 10px 10px; background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%);">
-    <div class="row"
-        style="justify-content:start;border: 0px solid red; flex-direction: column; height: 80vh;min-width: 100%; width:max-content;">
-        <div class="col-12 userHeaderContainer shadow" style="flex-grow: 0;">
-            <div class="d-flex" style="justify-content: center; align-items: center; padding-top: 3%;">
-                <div class="d-flex" style="width: 0; min-width: 70%;">
-                    <h6 style="color: white;">Decision Support System</h6>
+<div class="row justify-content-center align-items-center vh-100">
+    <div class="col-auto align-self-center">
+        <p-card styleClass="">
+            <ng-template pTemplate="header">
+                <div class="col-12 userHeaderContainer shadow">
+                    <div class="d-flex header-content">
+                        <div class="d-flex title-section">
+                            <h6>Decision Support System</h6>
+                        </div>
+                        <div class="d-flex align-items-center icon-section">
+                            <i class="fa-solid fa-hospital"></i>
+                            <i class="pi pi-circle-on status-icon"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex align-items-center "
-                    style="justify-content: space-around; width: 0; min-width: 25%;">
-                    <i class="fa-solid fa-hospital" style="color: white;"></i>
-                    <i class="pi pi-circle-on" style="color: green"></i>
+            </ng-template>
+            <div class="row main-row">
+
+                <div class="col-12 thread-container-container">
+                    <app-message-thread-container [messages]="messages"></app-message-thread-container>
                 </div>
-            </div>
-        </div>
-        <div class="col-12 thread-container-container" style="flex-grow: 20;">
-            <app-message-thread-container [messages] = "messages"></app-message-thread-container>
-        </div>
-        <div class="col-12 d-flex align-items-end justify-content-center"
-            style="background-color: inherit;flex-grow: 5;">
-            <app-prompt-component (clickedOpenCamera)="receiveEvent($event)"></app-prompt-component>
-            <!-- <div [hidden] = "uploadedImageUrl.length <1">
+                <div class="col-12 d-flex align-items-end justify-content-center prompt-section">
+                    <app-prompt-component (clickedOpenCamera)="receiveEvent($event)"></app-prompt-component>
+                    <!-- <div [hidden] = "uploadedImageUrl.length <1">
                 <img  [src]="uploadedImageUrl" alt="Uploaded Image" style="max-height: 100px; max-width: 100px;">
             </div> -->
-            
-
-        </div>
+                </div>
+            </div>
+        </p-card>
     </div>
 </div>
