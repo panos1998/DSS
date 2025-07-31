@@ -47,11 +47,12 @@
 .userHeaderContainer {
     flex: 0 0 auto;
     top: 0;
-    position: sticky;
+  
     width: 100% !important;
     max-width: 100% !important;
-    z-index: 100;
-    background: linear-gradient(to bottom, #7d7e7d 0%,#0e0e0e 100%); 
+   
+    background: transparent;
+    /* linear-gradient(to bottom, #7d7e7d 0%,#0e0e0e 100%);  */
     border-radius: 0px 0px 0px 0px;
     margin: 0 !important;
     padding: 0 !important;

@@ -31,7 +31,7 @@ export class MessageComponentComponent implements OnInit {
         'width': '85%',
         'border-radius': '8px 15px 8px 15px',
         'background': 'rgba(220, 252, 231, 0.39)',
-        'margin-bottom': '3px',
+        'margin-bottom': '0.25rem',
 
         'backdrop-filter': 'blur(20px)',
         '-webkit-backdrop-filter': 'blur(20px)',
@@ -42,8 +42,7 @@ export class MessageComponentComponent implements OnInit {
         'width': '85%',
         'border-radius': '15px 8px 15px 8px',
         'background-color': 'var(--green-100)',
-        'margin-bottom': '3px',
-        'margin-top': '1px',
+        'margin-bottom': '0.25rem',
         'padding':'0.25rem'
 
       };
